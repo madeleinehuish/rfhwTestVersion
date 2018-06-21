@@ -3,13 +3,8 @@
 const _ = require('lodash');
 const axios = require('axios');
 
-//get current date and time
-const date = new Date();
-const day = date.getDay();
-const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-const hour = date.getHours();
-const minutes = date.getMinutes();
-const time = hour + ':' + minutes;
+//pull in code from time module
+const time = require('./time');
 
 //function keypress is modified from a function I located on Stack Overflow
 //function purpose is to wait for keypresses (I added the functionality for ctrl-c)
@@ -26,7 +21,7 @@ const keypress = async () => {
 
 //create the url to call api
 const baseUrl = 'https://data.sfgov.org/resource/bbb8-hzi6.json';
-const query = `${baseUrl}?dayorder=${day}`;
+const query = `${baseUrl}?dayorder=${time.day}`;
 
 //calling api with async/await syntax by date then filtering by current time
 //see bottom of file for alternate way to call this function with older syntax
@@ -39,7 +34,7 @@ const fetchTrucks = async () => {
 		const start24 = Number(truck.start24.substr(0,2));
 		const end24 = Number(truck.end24.substr(0,2));
 
-		return start24 <= hour && hour < end24;
+		return start24 <= time.hour && time.hour < end24;
 
 	})
 
@@ -47,7 +42,7 @@ const fetchTrucks = async () => {
 	const alphabetical = _.sortBy(truckFiltered, ['applicant']);
 
 	//print out list of trucks
-	console.log(`Trucks open in SF at ${time} on ${days[day]}`, '\n');
+	console.log(`Trucks open in SF at ${time.timeCurrent} on ${time.days[time.day]}`, '\n');
 
 	for(let i = 0; i < alphabetical.length; i++) {
 
