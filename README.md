@@ -9,7 +9,7 @@ run the following command (all commands should be run without the quotes):
 'git clone https://github.com/madeleinehuish/rfhw.git'
 
 Then change into the rfhw directory with 'cd rfhw'.
-From inside the rfhw directory type the following command:
+From inside the rfhw directory type the following command to install the dependencies:
 
 'npm install'
 
