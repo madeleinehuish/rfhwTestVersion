@@ -46,20 +46,3 @@ const fetchTrucks = async () => {
 }
 
 fetchTrucks();
-
-//this is an older way of calling api with axios without async/await syntax (useful for older versions of Node):
-// axios.get(query)
-// 		 .then(res=>{
-//
-// 			 truckArray = res.data;
-// 			 let truckFiltered = truckArray.filter(obj=>{
-//
-// 				 const start24 = Number(obj.start24.substr(0,2));
-// 				 const end24 = Number(obj.end24.substr(0,2));
-//
-// 				 return start24 <= hour && hour < end24;
-//
-// 			 })
-// 			 console.log('filtered: ', truckFiltered.length);
-//
-// 		 })
