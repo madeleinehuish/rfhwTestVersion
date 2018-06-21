@@ -9,9 +9,11 @@ if (minutes < 10) {
 }
 let hour12 = hour;
 let twelve;
-if(hour>=12) {
+if(hour>12) {
   hour12 = hour - 12;
   twelve = 'PM'
+} else if (hour===12){
+  twelve = 'PM';
 } else twelve = 'AM';
 const timeCurrent = hour12 + ':' + minutes + twelve;
 const dayCurrent = days[day];

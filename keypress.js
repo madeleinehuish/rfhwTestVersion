@@ -5,8 +5,8 @@ module.exports = async () => {
   process.stdin.setRawMode(true);
   return new Promise(resolve => process.stdin.once('data', (key) => {
 		if (key[0]===3) process.exit();
-    process.stdin.setRawMode(false)
-    resolve()
+    process.stdin.setRawMode(false);
+    resolve();
   })
 	)
 };
