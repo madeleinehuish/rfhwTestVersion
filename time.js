@@ -3,7 +3,7 @@ const date = new Date();
 const day = date.getDay();
 const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 let hour = date.getHours();
-const minutes = date.getMinutes();
+let minutes = date.getMinutes();
 if (minutes < 10) {
   minutes = '0' + minutes;
 }
