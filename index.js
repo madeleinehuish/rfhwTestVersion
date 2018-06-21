@@ -6,18 +6,8 @@ const axios = require('axios');
 //pull in code from time module
 const { day, hour, timeCurrent, dayCurrent } = require('./time');
 
-//function keypress is modified from a function I located on Stack Overflow
-//function purpose is to wait for keypresses (I added the functionality for ctrl-c)
-const keypress = async () => {
-
-  process.stdin.setRawMode(true);
-  return new Promise(resolve => process.stdin.once('data', (key) => {
-		if (key[0]===3) process.exit();
-    process.stdin.setRawMode(false)
-    resolve()
-  })
-	)
-};
+//pull in code from keypress module
+const keypress = require('./keypress');
 
 //create the url to call api
 const baseUrl = 'https://data.sfgov.org/resource/bbb8-hzi6.json';
