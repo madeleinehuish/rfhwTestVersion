@@ -14,5 +14,6 @@ if(hour>=12) {
   twelve = 'PM'
 } else twelve = 'AM';
 const timeCurrent = hour12 + ':' + minutes + twelve;
+const dayCurrent = days[day];
 
-module.exports = { day, days, hour, timeCurrent };
+module.exports = { day, hour, timeCurrent, dayCurrent };
