@@ -4,13 +4,14 @@
   "description": "Redfin Homework: Finding open food trucks in San Francisco at current time/day",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "anonymous",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "mocha": "^5.2.0"
   }
 }
